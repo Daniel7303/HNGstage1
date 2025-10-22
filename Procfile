@@ -1,0 +1,1 @@
+web: gunicorn string_analyser_service.wsgi
