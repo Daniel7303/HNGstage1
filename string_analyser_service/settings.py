@@ -69,10 +69,8 @@ WSGI_APPLICATION = "string_analyser_service.wsgi.application"  # update if diffe
 
 # --- DATABASE CONFIG ---
 DATABASES = {
-    "default": dj_database_url.config(
-        default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
-        conn_max_age=600,
-        ssl_require=False
+    'default': dj_database_url.config(
+        default=os.getenv("DATABASE_URL")
     )
 }
 
